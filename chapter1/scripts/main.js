@@ -89,7 +89,7 @@ function addBox() {
   var boxWireframe = new THREE.LineSegments(boxEdges, boxLines);
 
   var jzloader = new THREE.TextureLoader().load(
-    "/images/jz/image" + THREE.Math.randInt(1, 46) + ".jpg"
+    "/keer-site-debug/images/jz/image" + THREE.Math.randInt(1, 46) + ".jpg"
   );
 
   const planeGeo = new THREE.PlaneGeometry(9.5, 9.5, 9.5);
@@ -194,7 +194,9 @@ function renderr() {
 //   })
 
 //---------------------------------》load image as box
-var jzboxTexture = new THREE.TextureLoader().load("/images/jiaozhuo2.png");
+var jzboxTexture = new THREE.TextureLoader().load(
+  "/keer-site-debug/images/jiaozhuo2.png"
+);
 var jzboxGeometry = new THREE.BoxBufferGeometry(250, 250, 250);
 var jzboxMaterial = new THREE.MeshBasicMaterial({ map: jzboxTexture });
 
@@ -203,7 +205,9 @@ var jzboxfloor = new THREE.Mesh(jzboxGeometry, jzboxMaterial);
 scene.add(jzboxfloor);
 
 //---------------------------------》load image as floor
-var jzTexture = new THREE.TextureLoader().load("/images/jiaozhuo.png");
+var jzTexture = new THREE.TextureLoader().load(
+  "/keer-site-debug/images/jiaozhuo.png"
+);
 const jzGeometry = new THREE.PlaneGeometry(50, 100);
 const jzMaterial = new THREE.MeshBasicMaterial({
   map: jzTexture,
@@ -236,7 +240,7 @@ const sound = new THREE.Audio(bgM);
 
 // load a sound and set it as the Audio object's buffer
 const audioLoader = new THREE.AudioLoader();
-audioLoader.load("/sounds/rain.mp3", function (buffer) {
+audioLoader.load("/keer-site-debug/sounds/rain.mp3", function (buffer) {
   sound.setBuffer(buffer);
   sound.setLoop(true);
   sound.setVolume(0.5);

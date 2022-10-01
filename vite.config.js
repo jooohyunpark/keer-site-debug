@@ -3,6 +3,7 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
+  base: "/keer-site-debug/",
   build: {
     outDir: "./docs",
     rollupOptions: {
@@ -13,5 +14,11 @@ export default defineConfig({
         chapter2: resolve(__dirname, "chapter2/index.html"),
       },
     },
+  },
+  server: {
+    port: 3000,
+  },
+  preview: {
+    port: 8080,
   },
 });
